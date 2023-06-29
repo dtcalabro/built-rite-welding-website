@@ -1,0 +1,17 @@
+@supports (font-variation-settings: normal) {
+    @font-face {
+        font-family:Madefor;
+        font-display: swap;
+        font-weight: 400 800;
+        font-style: normal;
+        src: url(media/fonts/WixMadeforTextVF_W_Wght.8022447a.woff2) format("woff2-variations")
+    }
+
+    @font-face {
+        font-family: Madefor;
+        font-display: swap;
+        font-weight: 400 800;
+        font-style: italic;
+        src: url(media/fonts/WixMadeforTextItalicVF_W_Wght.54ac8fe3.woff2) format("woff2-variations")
+    }
+}

@@ -1,0 +1,63 @@
+/*
+ * About Us Section
+ */
+#about-us-header {
+    font-family: var(--display-font-stack-bold);
+}
+
+#about-us-text {
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+
+/*
+ * Our Team Section
+ */
+#our-team-header {
+    padding-top: 20px;
+    font-family: var(--display-font-stack-bold);
+}
+
+.our-team-container {
+    display: flex;
+}
+
+.team-member {
+    max-width: fit-content;
+    float: left;
+    margin-top: 15px;
+    padding: 10px;
+    background-color: darkgrey;
+    border-radius: 10px;
+    text-align: center;
+    margin-left: 50px;
+    margin-right: 50px;
+    min-width: 175px;
+}
+
+.team-member:first-of-type {
+    margin-left: auto;
+}
+
+.team-member:last-of-type {
+    margin-right: auto;
+}
+
+.team-member-name {
+    font-size: 18pt;
+    max-width: fit-content;
+    padding-bottom: 5px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: var(--display-font-stack-bold);
+}
+
+.team-member-role {
+    font-size: 12pt;
+    max-width: fit-content;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}

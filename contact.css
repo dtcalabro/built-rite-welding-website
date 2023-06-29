@@ -1,0 +1,52 @@
+#contact-us-header {
+    font-family: var(--display-font-stack-bold);
+}
+
+
+/*
+ * Contact Table
+ */
+table {
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border-collapse: collapse;
+    padding: 10px;
+    font-size: 16pt;
+}
+
+tbody#contact-table-body > tr:first-of-type > td:first-of-type {
+    border-top-left-radius: 10px;
+}
+
+tbody#contact-table-body > tr:first-of-type > td:last-of-type {
+    border-top-right-radius: 10px;
+}
+
+tbody#contact-table-body > tr:last-of-type > td:first-of-type {
+    border-bottom-left-radius: 10px;
+}
+
+tbody#contact-table-body > tr:last-of-type > td:last-of-type {
+    border-bottom-right-radius: 10px;
+}
+
+tbody#contact-table-body > tr > td {
+    background-color: lightgray;
+    color: black;
+}
+
+tbody#contact-table-body > tr > td:first-of-type {
+    background-color: yellow;
+    color: black;
+    font-family: var(--text-font-stack-bold);
+}
+
+#email-icon, #phone-icon, #mailing-address-icon {
+    height: 30px;
+    vertical-align: top;
+    padding-right: 10px;
+    min-width: 35px;
+}
