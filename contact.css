@@ -45,3 +45,71 @@ tbody#contact-table-body > tr > td:first-of-type {
     padding-right: 10px;
     min-width: 35px;
 }
+
+/* Extremely small devices (only for a handlefull of devices) */
+@media only screen and (max-width: 300px) {
+    tbody#contact-table-body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    tbody#contact-table-body > tr > td:last-of-type {
+        display: flex;
+        flex-direction: column;
+    }
+
+    tbody#contact-table-body > tr:first-of-type > td:first-of-type {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+    
+    tbody#contact-table-body > tr:first-of-type > td:last-of-type {
+        border-top-right-radius: 0px;
+    }
+    
+    tbody#contact-table-body > tr:last-of-type > td:first-of-type {
+        border-bottom-left-radius: 0px;
+    }
+    
+    tbody#contact-table-body > tr:last-of-type > td:last-of-type {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    tbody#contact-table-body > tr {
+        text-align: center;
+    }
+
+    tbody#contact-table-body > tr > td {
+        font-size: 10pt;
+    }
+
+    tbody#contact-table-body > tr > td:first-of-type {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #email-icon, #phone-icon, #mailing-address-icon {
+        padding-right: 0px;
+    }
+}
+
+/* Extra small devices (phones, 301px up and 600px down) */
+@media only screen and (min-width: 301px) and (max-width: 600px) {
+    tbody#contact-table-body > tr {
+        text-align: center;
+    }
+
+    tbody#contact-table-body > tr > td {
+        font-size: 12pt;
+    }
+
+    tbody#contact-table-body > tr > td:first-of-type {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #email-icon, #phone-icon, #mailing-address-icon {
+        padding-right: 0px;
+    }
+}
