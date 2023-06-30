@@ -24,8 +24,16 @@ main > .main-content {
     padding: 30px;
 }
 
+.section-header {
+    font-family: var(--display-font-stack-bold);
+}
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
+    .section-header {
+        font-size: 16pt;
+    }
+
     main > .main-content {
         margin-left: 0px;
         margin-right: 0px;

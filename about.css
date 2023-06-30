@@ -1,20 +1,9 @@
 /*
  * About Us Section
  */
-#about-us-header {
-    font-family: var(--display-font-stack-bold);
-}
-
 #about-us-text {
     margin-top: 15px;
     margin-bottom: 20px;
-}
-
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-    #about-us-header {
-        font-size: 16pt;
-    }
 }
 
 
