@@ -109,7 +109,7 @@ main > .main-content {
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
     .site-header-label-container {
-        font-size: 32pt;
+        font-size: 24pt;
     }
 
     .nav-menu-tabs {
@@ -174,5 +174,10 @@ footer {
         font-size: 8pt;
         margin-right: auto;
         margin-left: auto;
+        padding-bottom: 0px;
+    }
+
+    .footer-text:last-of-type {
+        padding-bottom: 10px;
     }
 }
