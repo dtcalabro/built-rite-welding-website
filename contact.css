@@ -1,12 +1,12 @@
 /*
  * Contact Table
  */
-table {
+table#contact-table {
     border-radius: 10px;
     margin-top: 20px;
 }
 
-table, th, td {
+table#contact-table, tbody#contact-table-body > tr > td {
     border-collapse: collapse;
     padding: 10px;
     font-size: 16pt;
@@ -46,8 +46,13 @@ tbody#contact-table-body > tr > td:first-of-type {
     min-width: 35px;
 }
 
-/* Extremely small devices (only for a handlefull of devices) */
-@media only screen and (max-width: 300px) {
+/* Extremely small devices (only for a handfull of devices) */
+@media only screen and (max-width: 350px) {
+    table#contact-table {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     tbody#contact-table-body {
         display: flex;
         flex-direction: column;
@@ -95,7 +100,7 @@ tbody#contact-table-body > tr > td:first-of-type {
 }
 
 /* Extra small devices (phones, 301px up and 600px down) */
-@media only screen and (min-width: 301px) and (max-width: 600px) {
+@media only screen and (min-width: 351px) and (max-width: 600px) {
     tbody#contact-table-body > tr {
         text-align: center;
     }
