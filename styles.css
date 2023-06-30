@@ -2,7 +2,6 @@
  * General Setup
  */
 html {
-    /*font-family: Arial, sans-serif;*/
     font-family: var(--text-font-stack);
 }
 
@@ -16,16 +15,40 @@ main {
     background-color: rgb(64, 64, 64);
 }
 
+h1, p {
+    margin-block: unset;
+}
+
 main > .main-content {
     background-color: white;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
     padding: 30px;
 }
 
-h1, p {
-    margin-block: unset;
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    main > .main-content {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    main > .main-content {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 
@@ -83,6 +106,22 @@ h1, p {
     color: black;
 }
 
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .site-header-label-container {
+        font-size: 32pt;
+    }
+
+    .nav-menu-tabs {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nav-menu-tab-button {
+        font-size: 14pt;
+    }
+}
+
 
 /*
  * Main Content
@@ -111,13 +150,10 @@ footer {
     /*min-height: inherit;*/
 }
 
-footer > p {
-    padding: 10px;
-    text-align: center;
-}
-
 .footer-text {
     font-family: var(--display-font-stack-bold);
+    padding: 10px;
+    text-align: center;
 }
 
 .footer-text:first-of-type {
@@ -126,4 +162,17 @@ footer > p {
 
 .footer-text:last-of-type {
     margin-right: auto;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    footer {
+        flex-direction: column;
+    }
+
+    .footer-text {
+        font-size: 8pt;
+        margin-right: auto;
+        margin-left: auto;
+    }
 }

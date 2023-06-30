@@ -10,6 +10,13 @@
     margin-bottom: 20px;
 }
 
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    #about-us-header {
+        font-size: 16pt;
+    }
+}
+
 
 /*
  * Our Team Section
@@ -60,4 +67,40 @@
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    #our-team-header {
+        font-size: 16pt;
+    }
+
+    .our-team-container {
+        flex-direction: column;
+    }
+
+    .team-member {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .team-member-name {
+        font-size: 14pt;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .team-member {
+        margin-left: 3vw;
+        margin-right: 3vw;
+    }
+
+    .team-member:first-of-type {
+        margin-left: auto;
+    }
+
+    .team-member:last-of-type {
+        margin-right: auto;
+    }
 }
