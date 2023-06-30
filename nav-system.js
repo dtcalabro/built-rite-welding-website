@@ -15,8 +15,8 @@ function selectNavMenuTab(selectedTabElem) {
         var dest = selectedTabElem.getAttribute("href");
         if (dest != null) {
             //window.location.href = dest;
-            //window.top.location.href = dest;
-            window.parent.location.href = dest;
+            window.top.location.href = dest;
+            //window.parent.location.href = dest; Fails (unsafe)
         }
     }
 }
