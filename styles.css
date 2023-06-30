@@ -8,7 +8,7 @@ html {
 
 body {
     margin: 0px;
-    background-color: white;
+    background-color: darkgray;
     color: black;
 }
 
@@ -88,8 +88,8 @@ h1, p {
  * Main Content
  */
 body > main {
-    display: flex;
-    flex: 1;
+    /*display: flex;
+    flex: 1;*/
 }
 
 
@@ -106,8 +106,9 @@ footer {
     background-color: darkgray;
     color: black;
     width: 100%;
-    margin-top: auto;
+    /*margin-top: auto;*/
     display: flex;
+    /*min-height: inherit;*/
 }
 
 footer > p {
