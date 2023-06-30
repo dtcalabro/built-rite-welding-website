@@ -11,6 +11,10 @@ body {
     color: black;
 }
 
+html, body {
+    overflow: hidden;
+}
+
 main {
     background-color: rgb(64, 64, 64);
 }
