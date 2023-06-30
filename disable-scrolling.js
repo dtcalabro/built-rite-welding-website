@@ -31,3 +31,6 @@ function disableScrolling() {
     window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
     window.addEventListener('keydown', preventDefaultForScrollKeys, false);
 }
+
+// Disable scrolling
+disableScrolling();
