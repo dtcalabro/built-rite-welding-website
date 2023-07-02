@@ -61,6 +61,9 @@
         <script>
             if (navigator.platform === 'iPad' || navigator.platform === 'iPhone' || navigator.platform === 'iPod') {
                 console.log("This is an iOS device.");
+                disableScrolling();
+                document.getElementsByTagName("html")[0].style.overflow = "hidden";
+                document.getElementsByTagName("body")[0].style.overflow = "hidden";
             } else {
                 console.log("This is not an iOS device!");
             }
