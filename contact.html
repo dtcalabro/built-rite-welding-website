@@ -65,10 +65,12 @@
                 // Log the received message
                 console.log('Received scroll message: ', event.data);
 
-                var scrollTopMessage = "scrollTop: " + window.scrollTop;
+                var scrollTopMessage = "scrollTop: " + (window.scrollY || window.pageYOffset || document.body.scrollTop + (document.documentElement && document.documentElement.scrollTop || 0));
+                console.log("scrollTopMessage: '" + scrollTopMessage + "'");
                 window.parent.postMessage(scrollTopMessage, "*");
 
-                var scrollLeftMessage = "scrollLeft: " + window.scrollLeft;
+                var scrollLeftMessage = "scrollLeft: " + (window.scrollX || window.pageXOffset || document.body.scrollLeft + (document.documentElement && document.documentElement.scrollLeft || 0));
+                console.log("scrollLeftMessage: '" + scrollLeftMessage + "'");
                 window.parent.postMessage(scrollLeftMessage, "*");
             });
         </script>
