@@ -47,4 +47,4 @@ function disableScrolling() {
 }
 
 // Disable scrolling
-//disableScrolling();
+disableScrolling();
