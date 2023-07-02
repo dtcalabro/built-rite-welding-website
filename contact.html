@@ -60,5 +60,17 @@
             <p class="footer-text">&copy; 2023 by Built Rite Welding LLC.</p>
             <p class="footer-text">Website designed, developed, and maintained by Derek Calabro.</p>
         </footer>
+        <script>
+            document.addEventListener('scroll', event => {
+                // Log the received message
+                console.log('Received scroll message: ', event.data);
+
+                var scrollTopMessage = "scrollTop: " + window.scrollTop();
+                window.parent.postMessage(scrollTopMessage, "*");
+
+                var scrollLeftMessage = "scrollLeft: " + window.scrollLeft();
+                window.parent.postMessage(scrollLeftMessage, "*");
+            });
+        </script>
     </body>
 </html>

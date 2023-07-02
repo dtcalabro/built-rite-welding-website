@@ -83,5 +83,17 @@
             console.log("window width: " + window.innerWidth + ", window height: " + window.innerHeight);
             console.log("parent width: " + parent.innerWidth + ", parent height: " + parent.innerHeight);
         </script>-->
+        <script>
+            document.addEventListener('scroll', event => {
+                // Log the received message
+                console.log('Received scroll message: ', event.data);
+
+                var scrollTopMessage = "scrollTop: " + window.scrollTop();
+                window.parent.postMessage(scrollTopMessage, "*");
+
+                var scrollLeftMessage = "scrollLeft: " + window.scrollLeft();
+                window.parent.postMessage(scrollLeftMessage, "*");
+            });
+        </script>
     </body>
 </html>
