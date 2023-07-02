@@ -17,7 +17,7 @@ function selectNavMenuTab(selectedTabElem) {
             window.location.href = dest;
             //window.top.location.href = dest; // Fails (unsafe)
             //window.parent.location.href = dest; // Fails (unsafe)
-            window.parent.postMessage(dest, "*");
+            window.parent.postMessage(dest, "https://dtcalabro.wixsite.com/built-rite-welding");
         }
     }
 }
