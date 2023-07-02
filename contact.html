@@ -74,5 +74,12 @@
                 window.parent.postMessage(scrollLeftMessage, "*");
             });
         </script>
+        <script>
+            if (navigator.platform === 'iPad' || navigator.platform === 'iPhone' || navigator.platform === 'iPod') {
+                console.log("This is an iOS device.");
+            } else {
+                console.log("This is not an iOS device!");
+            }
+        </script>
     </body>
 </html>
