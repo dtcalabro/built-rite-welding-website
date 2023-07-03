@@ -104,7 +104,7 @@
         <script>
             function sendEmail(firstName, lastName, email, subject, message) {
                 console.log("Posting SendEmail message!");
-                const data = '{"action":"SendEmail", "data":["firstName":"' + firstName + '", "lastName":"' + lastName + '", "email":"' + email + '", "subject":"' + subject + '", "message":"' + message + '"]}';
+                const data = '{"action":"SendEmail", "data":{"firstName":"' + firstName + '", "lastName":"' + lastName + '", "email":"' + email + '", "subject":"' + subject + '", "message":"' + message + '"}}';
                 console.log("data: " + data);
                 window.parent.postMessage(data, "*");
             }
