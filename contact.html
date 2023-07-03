@@ -57,7 +57,7 @@
                         </tr>
                     </tbody>
                 </table>
-                <form id="contact-form" onsubmit="sendEmail(first-name, last-name, email, subject, message);">
+                <form id="contact-form" onsubmit="sendEmail(document.getElementById('first-name').value, document.getElementById('last-name').value, document.getElementById('email').value, document.getElementById('subject').value, document.getElementById('message').value);">
                     <label for="first-name">First name:</label><br>
                     <input type="text" id="first-name" name="first-name"><br>
                     <label for="last-name">Last name:</label><br>
