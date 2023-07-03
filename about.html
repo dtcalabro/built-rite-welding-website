@@ -80,10 +80,6 @@
             <p class="footer-text">Website designed, developed, and maintained by Derek Calabro.</p>
         </footer>
         <!--<script>
-            console.log("window width: " + window.innerWidth + ", window height: " + window.innerHeight);
-            console.log("parent width: " + parent.innerWidth + ", parent height: " + parent.innerHeight);
-        </script>-->
-        <script>
             document.addEventListener('scroll', event => {
                 // Log the received message
                 console.log('Received scroll message: ', event.data);
@@ -96,7 +92,7 @@
                 console.log("scrollLeftMessage: '" + scrollLeftMessage + "'");
                 window.parent.postMessage(scrollLeftMessage, "*");
             });
-        </script>
+        </script>-->
         <script>
             if (navigator.platform === 'iPad' || navigator.platform === 'iPhone' || navigator.platform === 'iPod') {
                 console.log("This is an iOS device.");
