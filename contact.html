@@ -57,6 +57,7 @@
                         </tr>
                     </tbody>
                 </table>
+                <button type="button" onclick="sendEmail();">Send Email!</button>
             </div>
         </main>
         <footer>
@@ -85,6 +86,12 @@
                 document.getElementsByTagName("body")[0].style.overflow = "hidden";
             } else {
                 console.log("This is not an iOS device!");
+            }
+        </script>
+        <script>
+            function sendEmail() {
+                console.log("Posting SendEmail message!");
+                window.parent.postMessage("SendEmail", "*");
             }
         </script>
     </body>
