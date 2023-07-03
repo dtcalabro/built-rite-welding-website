@@ -30,6 +30,7 @@
     margin-left: 50px;
     margin-right: 50px;
     min-width: 175px;
+    transition: all 0.5s ease-in-out;
 }
 
 .team-member:first-of-type {
@@ -48,6 +49,7 @@
     margin-left: auto;
     margin-right: auto;
     font-family: var(--display-font-stack-bold);
+    transition: all 0.5s ease-in-out;
 }
 
 .team-member-role {
@@ -70,6 +72,26 @@
 
     .team-member {
         margin-left: auto;
+        margin-right: auto;
+    }
+
+    .team-member-name {
+        font-size: 14pt;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 767px) {
+    .team-member {
+        margin-left: 3vw;
+        margin-right: 3vw;
+        min-width: auto;
+    }
+
+    .team-member:first-of-type {
+        margin-left: auto;
+    }
+
+    .team-member:last-of-type {
         margin-right: auto;
     }
 

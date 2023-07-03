@@ -118,3 +118,13 @@ tbody#contact-table-body > tr > td:first-of-type {
         padding-right: 0px;
     }
 }
+
+@media only screen and (min-width: 601px) and (max-width: 675px) {
+    #email-icon, #phone-icon, #mailing-address-icon {
+        height: 25px;
+    }
+
+    tbody#contact-table-body > tr > td {
+        font-size: 13.5pt;
+    }
+}
