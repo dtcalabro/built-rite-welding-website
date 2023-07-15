@@ -15,6 +15,8 @@
         <script src="nav-system.js" defer></script>
         <script src="element-wrapper-funcs.js" defer></script>
         <script src="disable-scrolling.js" defer></script>
+        <script src="forms.js" defer></script>
+        <script src="cookies.js" defer></script>
     </head>
     <body>
         <header>
@@ -57,57 +59,164 @@
                         </tr>
                     </tbody>
                 </table>
-                <form id="contact-form" onsubmit="sendEmail(document.getElementById('first-name').value, document.getElementById('last-name').value, document.getElementById('email').value, document.getElementById('subject').value, document.getElementById('message').value);">
-                    <label for="first-name">First name:</label><br>
-                    <input type="text" id="first-name" name="first-name"><br>
-                    <label for="last-name">Last name:</label><br>
-                    <input type="text" id="last-name" name="last-name"><br>
-                    <label for="email">Email:</label><br>
-                    <input type="text" id="email" name="email"><br>
-                    <label for="subject">Subject:</label><br>
-                    <input type="text" id="subject" name="subject"><br>
-                    <label for="message">Message:</label><br>
-                    <input type="text" id="message" name="message">
-                    <input type="submit" value="Submit">
+                <h1 id="message-us-header" class="section-header">Message Us</h1>
+                <form id="contact-form" novalidate>
+                    <label class="form-field-label" for="first-name" required>First name:</label>
+                    <input class="form-field-input" type="text" id="first-name" name="first-name" placeholder="Enter your first name ..." title="First Name (Required)" required>
+                    <label class="form-field-label" for="last-name" required>Last name:</label>
+                    <input class="form-field-input" type="text" id="last-name" name="last-name" placeholder="Enter your last name ..." title="Last Name (Required)" required>
+                    <label class="form-field-label" for="email" required>Email:</label>
+                    <input class="form-field-input" type="text" id="email" name="email" placeholder="Enter your email ..." pattern="^([a-zA-Z0-9_.\-])+@([a-zA-Z0-9_.\-])+\.([a-z])+$" title="Email (Required)" required>
+                    <label class="form-field-label" for="subject" required>Subject:</label>
+                    <input class="form-field-input" type="text" id="subject" name="subject" placeholder="Enter a subject ..." title="Subject (Required)" required>
+                    <label class="form-field-label" for="message" required>Message:</label>
+                    <textarea class="form-field-textarea" id="message" name="message" rows="4" cols="50" placeholder="Enter your message ..." title="Message (Required)" required></textarea>
+                    <div id="contact-form-alert" class="alert alert-red">
+                        <img id="contact-form-alert-icon-red" class="alert-icon alert-icon-red" src="media/icons/triangle-exclamation-solid.svg" alt="Alert Exclamation Icon"></img>
+                        <img id="contact-form-alert-icon-green" class="alert-icon alert-icon-green" src="media/icons/check-solid.svg" alt="Alert Check Icon"></img>
+                        <span id="contact-form-alert-closebtn" class="alert-closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                        <span id="contact-form-alert-text" class="alert-text">Alert message.</span>
+                    </div>
+                    <input class="form-field-submit" type="submit" value="Submit" onclick="validateFormData();">
+                    <div class="asterisk-required-message">
+                        <img class="asterisk-icon" src="media/icons/asterisk-red.svg" alt="Asterisk Icon"></img>
+                        Required field
+                    </div>
                 </form>
-                <!--<button type="button" onclick="sendEmail();">Send Email!</button>-->
             </div>
         </main>
         <footer>
             <p class="footer-text">&copy; 2023 by Built Rite Welding LLC.</p>
             <p class="footer-text">Website designed, developed, and maintained by Derek Calabro.</p>
         </footer>
-        <!--<script>
-            document.addEventListener('scroll', event => {
-                // Log the received message
-                console.log('Received scroll message: ', event.data);
-
-                var scrollTopMessage = "scrollTop: " + (window.scrollY || window.pageYOffset || document.body.scrollTop + (document.documentElement && document.documentElement.scrollTop || 0));
-                console.log("scrollTopMessage: '" + scrollTopMessage + "'");
-                window.parent.postMessage(scrollTopMessage, "*");
-
-                var scrollLeftMessage = "scrollLeft: " + (window.scrollX || window.pageXOffset || document.body.scrollLeft + (document.documentElement && document.documentElement.scrollLeft || 0));
-                console.log("scrollLeftMessage: '" + scrollLeftMessage + "'");
-                window.parent.postMessage(scrollLeftMessage, "*");
-            });
-        </script>-->
         <script>
+            /* Only prevent scrolling on iOS devices because they have something weird with scrolling inside the iframe and this was the easiest fix possible */
             if (navigator.platform === 'iPad' || navigator.platform === 'iPhone' || navigator.platform === 'iPod') {
-                console.log("This is an iOS device.");
+            //    console.log("This is an iOS device.");
                 disableScrolling();
                 document.getElementsByTagName("html")[0].style.overflow = "hidden";
                 document.getElementsByTagName("body")[0].style.overflow = "hidden";
-            } else {
-                console.log("This is not an iOS device!");
+            //} else {
+            //    console.log("This is not an iOS device!");
             }
         </script>
         <script>
             function sendEmail(firstName, lastName, email, subject, message) {
+                // Format the data
                 console.log("Posting SendEmail message!");
                 const data = '{"action":"SendEmail", "data":{"firstName":"' + firstName + '", "lastName":"' + lastName + '", "email":"' + email + '", "subject":"' + subject + '", "message":"' + message + '"}}';
                 console.log("data: " + data);
+
+                // Send the message to the parent of the iframe
                 window.parent.postMessage(data, "*");
+
+                // Clear all the form values after sending
+                document.getElementById('first-name').value = "";
+                document.getElementById('last-name').value = "";
+                document.getElementById('email').value = "";
+                document.getElementById('subject').value = "";
+                document.getElementById('message').value = "";
             }
+        </script>
+        <script>
+            /* Form Related Stuff */
+            function validateFormData() {
+                var firstNameInput = document.getElementById('first-name');
+                const isValidFirstName = checkValidity(firstNameInput);
+                var lastNameInput = document.getElementById('last-name');
+                const isValidLastName = checkValidity(lastNameInput);
+                var emailInput = document.getElementById('email');
+                const isValidEmail = checkValidity(emailInput);
+                var subjectInput = document.getElementById('subject');
+                const isValidSubject = checkValidity(subjectInput);
+                var messageInput = document.getElementById('message');
+                const isValidMessage = checkValidity(messageInput);
+
+                if (isValidFirstName && isValidLastName && isValidEmail && isValidSubject && isValidMessage) {
+                    /* Check when last message was sent to help prevent spamming. It's not foolproof, but it's a start. */
+                    var lastMessageSent = readCookie("sentMessage");
+                    var allowedToSendMessage = true;
+                    if ((lastMessageSent != "") && ((new Date() - new Date(lastMessageSent)) < (5 * 60 * 1000))) {
+                        // Has not been 5 minutes since last message was sent, don't send message
+                        allowedToSendMessage = false;
+                    }
+
+                    /* Send a green or red alert depending on if the user is allowed to send a message */
+                    if (allowedToSendMessage) {
+                        /* If allowed to send the message and if everything in the form checks out, display a green alert */
+                        displayGreenAlert("Message recieved. Thanks for reaching out!")
+
+                        sendEmail(firstNameInput.value, lastNameInput.value, emailInput.value, subjectInput.value, messageInput.value);
+
+                        // Update the cookie with the current date and time
+                        createCookie("sentMessage", new Date(), true);
+                    } else {
+                        /* If not allowed to send the message */
+                        displayRedAlert("Unable to send message! You have sent too many messages. Try again in a few minutes.")
+                    }
+                } else {
+                    /* If something in the form doesn't check out, display a red alert */
+                    var message = "";
+                    if (!isValidFirstName && isValidLastName && isValidEmail && isValidSubject && isValidMessage) {
+                        // First name is missing
+                        message = "Please enter your first name before proceeding!";
+                    } else if (isValidFirstName && !isValidLastName && isValidEmail && isValidSubject && isValidMessage) {
+                        // Last name is missing
+                        message = "Please enter your last name before proceeding!";
+                    } else if (isValidFirstName && isValidLastName && !isValidEmail && isValidSubject && isValidMessage) {
+                        // Email is not valid
+                        message = "Please enter a valid email before proceeding!";
+                    } else if (isValidFirstName && isValidLastName && isValidEmail && !isValidSubject && isValidMessage) {
+                        // Subject is missing
+                        message = "Please enter a subject before proceeding!";
+                    } else if (isValidFirstName && isValidLastName && isValidEmail && isValidSubject && !isValidMessage) {
+                        // Message is missing
+                        message = "Please enter a message before proceeding!";
+                    } else {
+                        // Some other combination of missing or invalid input was given
+                        message = "Please verify the information given is correct and all fields are answered before proceeding!";
+                    }
+                    displayRedAlert(message);
+
+                    var children = document.getElementById("contact-form").children;
+                    for (var i = 0; i < children.length; i++) {
+                        if (children[i].containsClass("invalid-input")) {
+                            children[i-1].scrollIntoView();
+                            children[i].focus();
+                            break;
+                        }
+                    }
+                }
+            }
+
+            function displayRedAlert(message) {
+                var formAlert = document.getElementById('contact-form-alert');
+                formAlert.replaceClassIfPresent('alert-green', 'alert-red');
+                formAlert.style.display = "block";
+                document.getElementById('contact-form-alert-icon-red').style.display = "initial";
+                document.getElementById('contact-form-alert-icon-green').style.display = "none";
+                document.getElementById('contact-form-alert-text').textContent = message;
+            }
+
+            function displayGreenAlert(message) {
+                var formAlert = document.getElementById('contact-form-alert');
+                formAlert.replaceClassIfPresent('alert-red', 'alert-green');
+                formAlert.style.display = "block";
+                document.getElementById('contact-form-alert-icon-green').style.display = "initial";
+                document.getElementById('contact-form-alert-icon-red').style.display = "none";
+                document.getElementById('contact-form-alert-text').textContent = message;
+            }
+
+            /* Prevent form from reloading the page on submit */
+            var contactForm = document.getElementById("contact-form");
+            function handleForm(event) { event.preventDefault(); } 
+            contactForm.addEventListener('submit', handleForm);
+
+            function handleFocusChange(event) {
+                /* Handle focus changing to validate fields after they loose focus */
+                checkValidity(event.target);
+            } 
+            contactForm.addEventListener('focusout', handleFocusChange);
         </script>
     </body>
 </html>

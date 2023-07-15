@@ -128,3 +128,61 @@ tbody#contact-table-body > tr > td:first-of-type {
         font-size: 13.5pt;
     }
 }
+
+
+/*
+ * Contact Form
+ */
+#message-us-header {
+    padding-top: 40px;
+}
+
+/*
+#contact-form > .form-field-label {
+    display: block;
+    margin-top: 1em;
+    font-family: var(--text-font-stack);
+}
+
+#contact-form > .form-field-input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid lightgray;
+    border-radius: 10px;
+    font-family: var(--text-font-stack);
+}
+
+#contact-form > .form-field-textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid lightgray;
+    border-radius: 10px;
+    font-family: var(--text-font-stack);
+    resize: none;
+}
+
+#contact-form > .form-field-submit {
+    background-color: lightgray;
+    border: none;
+    color: black;
+    padding: 16px 32px;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-top: 1em;
+    font-family: var(--display-font-stack-bold);
+}
+
+#contact-form > .form-field-submit:hover {
+    background-color: black;
+    color: white;
+}
+*/
+
+#contact-form-alert {
+    display: none;
+}
