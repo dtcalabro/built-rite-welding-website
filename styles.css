@@ -266,6 +266,7 @@ footer {
     margin-top: 15px;
     margin-bottom: 15px;
     border-radius: 10px;
+    min-height: 25px;
 }
 
 .alert-red {
@@ -288,6 +289,8 @@ footer {
     line-height: 20px;
     cursor: pointer;
     transition: 0.3s;
+    padding-top: 2.5px;
+    padding-bottom: 2.5px;
 }
   
 .alert-closebtn:hover {
@@ -298,6 +301,9 @@ footer {
     display: flex;
     vertical-align: middle;
     text-align: center;
+    justify-content: center;
+    padding-top: 2.5px;
+    padding-bottom: 2.5px;
 }
 
 .alert-icon {
@@ -316,7 +322,6 @@ footer {
     
     .alert-text {
         font-size: 10pt;
-        text-align: center;
     }
 
     .alert-icon {
@@ -336,7 +341,6 @@ footer {
     
     .alert-text {
         font-size: 10pt;
-        text-align: center;
     }
 
     .alert-icon {
@@ -394,7 +398,7 @@ footer {
     text-decoration: none;
     cursor: pointer;
     border-radius: 10px;
-    margin-top: 1em;
+    margin-top: 8px;
     font-family: var(--display-font-stack-bold);
 }
 
