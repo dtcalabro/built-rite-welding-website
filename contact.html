@@ -116,6 +116,13 @@
                 document.getElementById('email').value = "";
                 document.getElementById('subject').value = "";
                 document.getElementById('message').value = "";
+
+                // Remove invalid-input class if autofill was used
+                document.getElementById('first-name').removeClassIfPresent("invalid-input");
+                document.getElementById('last-name').removeClassIfPresent("invalid-input")
+                document.getElementById('email').removeClassIfPresent("invalid-input");
+                document.getElementById('subject').removeClassIfPresent("invalid-input");
+                document.getElementById('message').removeClassIfPresent("invalid-input");
             }
         </script>
         <script>
